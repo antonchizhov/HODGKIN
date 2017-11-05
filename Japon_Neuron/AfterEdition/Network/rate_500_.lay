@@ -1,0 +1,312 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"rate(t)_500pA_gGABA=7.dat" "rate_pop_500pA_gGABA=7.dat" "rate(t)_500pA_gGABA=0.dat" "rate_pop_500pA_gGABA=0.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 4.1691
+    }
+  WIDTH = 8.0177
+  HEIGHT = 5.2408
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-4]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    TEXTSHAPE
+      {
+      FONT = HELV
+      HEIGHT = 5
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    ROWSPACING = 1.4
+    XYPOS
+      {
+      X = 44.335
+      Y = 91.925
+      }
+    }
+$!XYMAP  [1]
+  NAME = 'HH-neurons, g_S=0' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = CUSTOM2
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [2]
+  NAME = 'Population model, g_S=0' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = CUSTOM2
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [3]
+  NAME = 'Network of HH-neurons' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = WHITE
+    SIZE = 1.5
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [4]
+  NAME = 'Population model' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.05
+    RANGEMIN = 0
+    RANGEMAX = 120
+    GRSPACING = 20
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 2
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'Time, ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 9
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.6
+    RANGEMIN = 0
+    RANGEMAX = 600
+    GRSPACING = 100
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'Rate, Hz' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 14.607
+      Y1 = 14.049
+      X2 = 93.714
+      Y2 = 87.602
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 16.8220530814
+    Y = 93.7744103315
+    }
+  ZONE = 3
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  BOX
+    {
+    MARGIN = 50
+    }
+  TEXT = 'I_e_x_t=500 pA,  g_S=7 mS/cm^2,  `t_S=3 ms,  `t_d=1 ms' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 39.2309814535
+    Y = 96.7233989571
+    }
+  ZONE = 3
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  BOX
+    {
+    MARGIN = 50
+    }
+  TEXT = '-' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

@@ -1,0 +1,116 @@
+{ Uses files:
+}
+
+procedure CommonParametersFromFile;
+begin
+IfDataIn1column:=1;
+NSmpls:=13;
+Smpl:=1;
+{ Ohm's law }
+NP0.HH_type:='Migliore';//'Lyle';
+HodgkinPhysParameters(NP0);
+NP0.IfBlockNaR:=0;
+NP0.Square:=5e-5{cm^2};
+t_end:=0.51 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+Iind:=0 {pA};
+{ Blockade }
+{ Clamping }
+NP0.If_I_V_or_g:=5;
+NP0.Vrest:=-0.065 {mV};
+{ Samples - experimental curves }
+IfDataIn1column:=0;
+scx_Smpl:=0.001 {ms};
+scy_Smpl:=1 {mV};
+  if KeepParams=0 then begin
+
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  SmplFile[Smpl]:='ramp_2ms.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+  SmplFile[Smpl]:='ramp_10ms.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+  SmplFile[Smpl]:='ramp_20ms.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+  SmplFile[Smpl]:='ramp_50ms.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+  SmplFile[Smpl]:='ramp_100ms.d';
+end;
+
+procedure ParametersFromFile6;
+begin
+  SmplFile[Smpl]:='ramp_278ms.d';
+end;
+
+procedure ParametersFromFile7;
+begin
+  SmplFile[Smpl]:='ramp_20ms_steep.d';
+end;
+
+procedure ParametersFromFile8;
+begin
+  SmplFile[Smpl]:='ramp_20ms_gentle.d';
+end;
+
+procedure ParametersFromFile9;
+begin
+  SmplFile[Smpl]:='step_20ms_-50mV.d';
+end;
+
+procedure ParametersFromFile10;
+begin
+  SmplFile[Smpl]:='step_20ms_-48mV.d';
+end;
+
+procedure ParametersFromFile11;
+begin
+  SmplFile[Smpl]:='step_20ms_-45mV.d';
+end;
+
+procedure ParametersFromFile12;
+begin
+  SmplFile[Smpl]:='step_20ms_-43mV.d';
+end;
+
+procedure ParametersFromFile13;
+begin
+  SmplFile[Smpl]:='step_20ms_-40mV.d';
+end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+
+
+

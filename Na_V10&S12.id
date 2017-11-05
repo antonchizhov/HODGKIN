@@ -1,0 +1,188 @@
+{ Uses files:
+  derived from 'Va10':
+                 'a-40.d'
+                 'a-30.d'
+                 'a-20.d'
+                 'a0.d'
+                 'a10.d'
+                 'a20.d'
+  derived from 'Sa12':
+                 'a-95i.d'
+                 'a-55i.d'
+                 'a-45i.d'
+                 'a-35i.d'
+                 'a-19i.d'
+}
+
+procedure CommonParametersFromFile;
+begin
+with NP do begin
+IfDataIn1column:=1;
+NSmpls:=11;
+{ Ohm's law }
+HH_type:={'Cummins'}'Calmar'{'Destexhe'};
+HodgkinPhysParameters(NP);
+t_end:=0.015 {s};
+nt_end:=imin(trunc(t_end/dt), MaxExp);
+{ Input }
+t_Iind:=0.050 {s};  t_IindShift:=0.0005 {s};  {!}
+Iind:=0 {pA};
+{ Blockade }
+IfBlockNa:=1;   IfBlockPass:=1;
+IfBlockK :=1;   IfBlockKM  :=1;
+IfBlockNaR:=0;
+gNa:=0; gK:=0; gKM:=0;
+{ Clamping }
+If_I_V_or_g:=1;
+Vrest:=-0.100 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1 {pA};
+  if KeepParams=0 then begin
+     t_IindShift:=0.00005;
+     gNaR:=5.51;
+     a1NaR:= 0.043;  a2NaR:=30;   a3NaR:= 3.85;
+     b1NaR:= 0.52;   b2NaR:= 0;   b3NaR:= 65;
+     c1NaR:= 0.042;  c2NaR:= 0;   c3NaR:= 8.6;
+     d1NaR:=0.5;   d2NaR:=65;   d3NaR:=12;   d4NaR:= -1;
+     VNaR:=0.031;
+{     gNaR:=15.3;
+     a1NaR:= 0.028;  a2NaR:=33;   a3NaR:= 14;
+     b1NaR:= 1.39;   b2NaR:= 0;   b3NaR:= 55;
+     c1NaR:= 0.021;  c2NaR:= 0;   c3NaR:= 8.5;
+     d1NaR:= 0.47;   d2NaR:=62;   d3NaR:= 9.5;   d4NaR:= -1;
+     VNaR:=0.027;}
+{     t_IindShift:=0.00005;
+     gNaR:=12.7;
+     a1NaR:= 0.045;  a2NaR:=49;   a3NaR:= 10;
+     b1NaR:= 0.76;   b2NaR:= 0;   b3NaR:= 35;
+     c1NaR:= 0.046;  c2NaR:= 0;   c3NaR:= 30;
+     d1NaR:= 0.86;   d2NaR:=65;   d3NaR:= 12.5;   d4NaR:= -1;
+     VNaR:=0.032;}
+     KeepParams:=1;
+  end;
+end;
+end;
+
+procedure ParametersFromFile;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=-0.040;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-40.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=-0.030;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-30.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=-0.020;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-20.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=0;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a0.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=0.010;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a10.d';
+end;
+
+procedure ParametersFromFile6;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+NP.Vrest:=-0.100 {mV};
+Vh:=0.020;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a20.d';
+end;
+
+procedure ParametersFromFile7;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: SSA12}
+Vh:=0;
+NP.Vrest:=-0.095;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-95i.d';
+end;
+
+procedure ParametersFromFile8;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: SSA12}
+Vh:=0;
+NP.Vrest:=-0.055{65};
+sc_Simplex:=0.5;
+  SmplFile[Smpl]:='a-55i.d';
+end;
+
+procedure ParametersFromFile9;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: SSA12}
+Vh:=0;
+NP.Vrest:=-0.045{45};
+sc_Simplex:=0.2;
+  SmplFile[Smpl]:='a-45i.d';
+end;
+
+procedure ParametersFromFile10;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: SSA12}
+Vh:=0;
+NP.Vrest:=-0.035;
+sc_Simplex:=0.2;
+  SmplFile[Smpl]:='a-35i.d';
+end;
+
+procedure ParametersFromFile11;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: SSA12}
+Vh:=0;
+NP.Vrest:=-0.019;
+sc_Simplex:=0.1;
+  SmplFile[Smpl]:='a-19i.d';
+end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+

@@ -1,0 +1,326 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"V(t)_KM_500pA.dat" "V(t)_KM_T_500pA.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.9777
+    }
+  WIDTH = 8.0177
+  HEIGHT = 3.2086
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    TEXTSHAPE
+      {
+      FONT = HELV
+      HEIGHT = 7
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    ROWSPACING = 1
+    XYPOS
+      {
+      X = 60.541
+      Y = 100
+      }
+    }
+$!XYMAP  [1]
+  NAME = 'full model' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = 'proposed model' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLUE
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLUE
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 19.23
+    RANGEMIN = 0
+    RANGEMAX = 300
+    GRSPACING = 100
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 10
+        }
+      OFFSET = 2
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 10
+        }
+      OFFSET = 11
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 13.2
+    RANGEMIN = -72
+    RANGEMAX = 16
+    GRSPACING = 20
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 10
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'mV' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 10
+        }
+      OFFSET = 9
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 13.196
+      Y1 = 19.23
+      X2 = 95.703
+      Y2 = 86.65
+      }
+    }
+  DEPXTOYRATIO = 1
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 22.8931958439
+    Y = 89.8589348994
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 10
+    }
+  TEXT = 'I_a=500 pA' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

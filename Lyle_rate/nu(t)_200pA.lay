@@ -1,0 +1,225 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"Br_noAd_200pA.dat" "RateNoise(t)_noAd_200pA_.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3" "V4" "V5" "V6" "V7" "V8" "V9" "V10"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 3.7106
+    }
+  WIDTH = 8.0017
+  HEIGHT = 5.094
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWTEXT = NO
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    ROWSPACING = 1.65
+    XYPOS
+      {
+      X = 37.883
+      Y = 92.961
+      }
+    }
+$!XYMAP  [1]
+  NAME = 'Map 1' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 6
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = 'Map 2' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 12.26
+    RANGEMIN = 0
+    RANGEMAX = 200
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    GRIDLINES
+      {
+      SHOW = YES
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 7
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.2
+    RANGEMIN = 0
+    RANGEMAX = 100
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    GRIDLINES
+      {
+      SHOW = YES
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'Hz' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 9
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 14.199
+      Y1 = 12.256
+      X2 = 94.993
+      Y2 = 96.256
+      }
+    }
+  DEPXTOYRATIO = 1
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 47.616981334
+    Y = 82.1781569084
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 5
+    }
+  TEXT = 'Phase model,  `r(t,0)\nEnsemble of neurons with noise' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

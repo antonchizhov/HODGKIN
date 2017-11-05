@@ -1,0 +1,311 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"v(u_s).dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3" "V4" "V5" "V6" "V8" "V9"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = TWOD
+$!FRAMENAME  = 'Frame 001' 
+$!ACTIVEFIELDZONES  =  [1]
+$!GLOBALCONTOUR 
+  VAR = 6
+  LABELS
+    {
+    SHOW = YES
+    GENERATEAUTOLABELS = NO
+    AUTOLEVELSKIP = 2
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWHEADER = NO
+    XYPOS
+      {
+      X = 90.535
+      Y = 100
+      }
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    }
+  COLORCUTOFF
+    {
+    RANGEMIN = -47.2844696045
+    RANGEMAX = -15.7614898682
+    }
+  COLORMAPFILTER
+    {
+    CONTINUOUSCOLOR
+      {
+      CMIN = -63.0459594727
+      CMAX = 0
+      }
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 37.3071441202
+    Y = 0.171610169377
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 51.8823207746
+    Y = 0.351602206805
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 65.3643591799
+    Y = 0.586693847527
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 79.2107770016
+    Y = 0.869538477771
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 92.6928154069
+    Y = 1.07891697029
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 103.988577314
+    Y = 1.16707633556
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 113.098062723
+    Y = 1.16340302867
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 133.138930623
+    Y = 0.509554402915
+    Z = 0
+    }
+$!CONTOURLEVELS NEW
+  RAWDATA
+16
+-60
+-58
+-56
+-54
+-52
+-50
+-48
+-46
+-44
+-42
+-40
+-38
+-36
+-34
+-32
+-30
+$!GLOBALSCATTER 
+  DATALABELS
+    {
+    NODELABELVAR = 1
+    }
+$!FIELD  [1]
+  MESH
+    {
+    COLOR = RED
+    }
+  CONTOUR
+    {
+    CONTOURTYPE = BOTHLINESANDFLOOD
+    COLOR = BLACK
+    USELIGHTINGEFFECT = YES
+    }
+  VECTOR
+    {
+    COLOR = RED
+    }
+  SCATTER
+    {
+    COLOR = RED
+    }
+  SHADE
+    {
+    COLOR = WHITE
+    }
+  BOUNDARY
+    {
+    COLOR = RED
+    }
+  VOLUMEMODE
+    {
+    VOLUMEOBJECTSTOPLOT
+      {
+      SHOWISOSURFACES = NO
+      SHOWSLICES = NO
+      SHOWSTREAMTRACES = NO
+      }
+    SURFACESTOPLOT = KPLANES
+    POINTSTOPLOT = SURFACESONLY
+    }
+$!TWODAXIS 
+  XVAR = 1
+  YVAR = 2
+$!VIEW FIT
+$!TWODAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 14.786
+      Y1 = 17.819
+      X2 = 83.536
+      Y2 = 94.819
+      }
+    }
+  DEPXTOYRATIO = 1
+  AXISMODE = INDEPENDENT
+  XDETAIL
+    {
+    AXISPOSITION = 17.82
+    RANGEMIN = 0
+    RANGEMAX = 150.015
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'u, mkA/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+  YDETAIL
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.79
+    RANGEMIN = 0
+    RANGEMAX = 1.50830846169
+    GRSPACING = 0.5
+    TICKLABEL
+      {
+      NUMFORMAT
+        {
+        FORMATTING = FIXEDFLOAT
+        PRECISION = 1
+        }
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 's, mS' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!GLOBALISOSURFACE 
+  ISOVALUE1 = -47.2844696045
+  ISOVALUE2 = -31.5229797363
+  ISOVALUE3 = -15.7614898682
+$!FIELDLAYERS 
+  SHOWCONTOUR = YES
+  SHOWSHADE = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 93.0019332227
+    Y = 96.1513463759
+    }
+  TEXT = 'mV' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

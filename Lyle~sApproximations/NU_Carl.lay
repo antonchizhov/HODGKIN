@@ -1,0 +1,454 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"v(u_s)_Lyle_AHP_Carl.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3" "V4" "V5" "V6" "V7" "V8" "V9" "V10" "V11" "V12" "V13"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 11
+    YAXISVAR = 13
+    }
+  LINES
+    {
+    COLOR = BLACK
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = RED
+    SIZE = 1
+    LINETHICKNESS = 0.4
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 4
+    }
+  LINES
+    {
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 5
+    }
+  LINES
+    {
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 6
+    }
+  LINES
+    {
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 7
+    }
+  LINES
+    {
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 8
+    }
+  LINES
+    {
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 9
+    }
+  LINES
+    {
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 10
+    }
+  LINES
+    {
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 11
+    }
+  LINES
+    {
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [11]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 12
+    }
+  LINES
+    {
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [12]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 13
+    }
+  LINES
+    {
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 14.75
+    RANGEMIN = 0
+    RANGEMAX = 10.001
+    GRSPACING = 2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      OFFSET = 2
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'u*g_L/(g_L+S), `mA/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 15.5
+    RANGEMIN = 0
+    RANGEMAX = 61.1681950653
+    GRSPACING = 10
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = '`n*g_L/(g_L+S), mS/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 15.505
+      Y1 = 14.75
+      X2 = 90.505
+      Y2 = 91.75
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 21.764972412
+    Y = 95.1158785224
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 4
+    }
+  TEXT = '[Graham] (I_N_a_-_M_a_r_k_o_v, I_K_D_r, I_K_A, I_K_M)+ I_A_H_P' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

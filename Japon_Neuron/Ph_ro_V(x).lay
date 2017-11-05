@@ -1,0 +1,253 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"Ph_ro_V(x).dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 3.468
+    }
+  WIDTH = 8.0177
+  HEIGHT = 4.757
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.6
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    YAXIS = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.6
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.35
+    RANGEMIN = 0
+    RANGEMAX = 50
+    GRSPACING = 10
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't^*, ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 7
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 13.39
+    RANGEMIN = 0
+    RANGEMAX = 100
+    GRSPACING = 20
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = '  , Hz' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 9
+      }
+    }
+$!XYAXIS 
+  YDETAIL 2
+    {
+    AXISPOSITION = 85.25
+    RANGEMIN = -72
+    RANGEMAX = -26
+    GRSPACING = 10
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'V\', mV' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 13.392
+      Y1 = 13.354
+      X2 = 85.253
+      Y2 = 90.354
+      }
+    }
+  DEPXTOYRATIO = 1
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 3.93846627838
+    Y = 44.6885091525
+    }
+  TEXTSHAPE
+    {
+    FONT = GREEK
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  ANGLE = 90
+  TEXT = 'r' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 28.2949030521
+    Y = 75.0034188355
+    }
+  TEXTSHAPE
+    {
+    FONT = GREEK
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'r' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 54.7737716508
+    Y = 84.7191881479
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'U' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

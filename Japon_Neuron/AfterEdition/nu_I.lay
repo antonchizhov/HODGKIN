@@ -1,0 +1,195 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"v(Iind).dat" "nu_I_exp.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  CURVES
+    {
+    CURVETYPE = CURVFIT
+    POLYORDER = 10
+    WEIGHTVAR = 1
+    USEWEIGHTVAR = NO
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = BLACK
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 15.82
+    RANGEMIN = 0
+    RANGEMAX = 500
+    GRSPACING = 100
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'Current (pA)' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 18.57
+    RANGEMIN = 0
+    RANGEMAX = 200
+    GRSPACING = 100
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'Firing rate (Hz)' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 12
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 18.57
+      Y1 = 15.821
+      X2 = 93.57
+      Y2 = 92.821
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

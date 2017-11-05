@@ -1,0 +1,403 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"func_Z_u30_tau4.dat" "func_Z_u30_tau1.dat" "func_Z_u30_tau10.dat" "func_Z_u10_tau4.dat" "func_Z_u60_tau4.dat" "func_Z_u30_tau4_noise0_1.dat" "func_Z_white.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-6,8]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWTEXT = NO
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    ROWSPACING = 1
+    XYPOS
+      {
+      X = 22.081
+      Y = 90.836
+      }
+    }
+$!XYMAP  [1]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLUE
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = CYAN
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = YELLOW
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = '&ZN&' 
+  ASSIGN
+    {
+    ZONE = 6
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = PURPLE
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  CURVES
+    {
+    CURVETYPE = CURVFIT
+    POLYORDER = 6
+    WEIGHTVAR = 1
+    USEWEIGHTVAR = NO
+    INDVARMIN = -9
+    INDVARMAX = -0.1
+    USEINDVARRANGE = YES
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 7
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    RANGEMIN = -11.1450004578
+    RANGEMAX = 0.00111450004578
+    GRSPACING = 2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    GRIDLINES
+      {
+      SHOW = YES
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 6
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 13.36
+    RANGEMIN = -6.4
+    RANGEMAX = 4.8
+    GRSPACING = 2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    GRIDLINES
+      {
+      SHOW = YES
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = '  A/cm^2' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 13.365
+      X2 = 88.365
+      }
+    }
+  DEPXTOYRATIO = 1
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 40.0848944392
+    Y = 62.7525354574
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 4
+    }
+  TEXT = 'u=30, tau=4\nu=30, tau=1\nu=30, tau=10\nu=10, tau=4\nu=60, tau=4\nu=30, tau=4, half noise\nwhite noise' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 5.21552573122
+    Y = 38.7941260124
+    }
+  TEXTSHAPE
+    {
+    FONT = GREEK
+    SIZEUNITS = FRAME
+    HEIGHT = 7
+    }
+  ANGLE = 90
+  TEXT = 'm' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

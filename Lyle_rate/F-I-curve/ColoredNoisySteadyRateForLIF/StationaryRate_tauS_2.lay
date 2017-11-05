@@ -1,0 +1,427 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"MorenoBote_mu80_sgm12.dat" "MorenoBote_mu80_sgm4.dat" "MorenoBote_mu105_sgm1.dat" "MorenoBote_mu80_sgm12_predict.dat" "MorenoBote_mu80_sgm4_predict.dat" "MorenoBote_mu105_sgm1_predict.dat" "our_mu80_sgm12_Nj100000.dat" "our_mu80_sgm4_Nj100000.dat" "our_mu105_sgm1_Nj100000.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  ISTRANSPARENT = YES
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [3,6,9]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = 'MorenoBote_mu80_sgm12' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = RED
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = 'MorenoBote_mu80_sgm4' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = GREEN
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = 'MorenoBote_mu105_sgm1' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = BLUE
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = 'MorenoBote_mu80_sgm12_predict' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = CYAN
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'MorenoBote_mu80_sgm4_predict' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = YELLOW
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'MorenoBote_mu105_sgm1_predict' 
+  ASSIGN
+    {
+    ZONE = 6
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = PURPLE
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'our_mu80_sgm12' 
+  ASSIGN
+    {
+    ZONE = 7
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = RED
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'our_mu80_sgm4' 
+  ASSIGN
+    {
+    ZONE = 8
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = GREEN
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'our_mu105_sgm1' 
+  ASSIGN
+    {
+    ZONE = 9
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    FILLCOLOR = BLUE
+    SIZE = 1
+    LINETHICKNESS = 0.3
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    RANGEMIN = 0
+    RANGEMAX = 200
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = '`t_S (ms)' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 5
+        }
+      OFFSET = 6
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    RANGEMIN = 27
+    RANGEMAX = 38
+    GRSPACING = 2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'stationary rate (Hz)' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 5
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

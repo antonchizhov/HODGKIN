@@ -1,0 +1,288 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"..\..\JAPON_~1\AFTERE~1\V(t)_100.dat" "..\..\JAPON_~1\AFTERE~1\withoutThreshold_U(t)_100.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWTEXT = NO
+    BOX
+      {
+      BOXTYPE = NONE
+      MARGIN = 30
+      }
+    ROWSPACING = 1.8
+    XYPOS
+      {
+      X = 34.575
+      Y = 82.103
+      }
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.6
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = 'Map 3' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = CUSTOM2
+    SIZE = 1.5
+    SKIPMODE = BYFRAMEUNITS
+    SKIPPING = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 11.19
+    RANGEMIN = 0
+    RANGEMAX = 40
+    GRSPACING = 10
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 5
+        }
+      OFFSET = 6
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    RANGEMIN = -72
+    RANGEMAX = 44
+    GRSPACING = 20
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 5
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'mV' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 5
+        }
+      OFFSET = 9
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      Y1 = 11.189
+      X2 = 95.06
+      Y2 = 96.132
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 48.7526524931
+    Y = 70.887692309
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 5
+    }
+  TEXT = 'V\nU' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 19.3478903626
+    Y = 19.9824541921
+    }
+  TEXTSHAPE
+    {
+    FONT = HELV
+    SIZEUNITS = FRAME
+    HEIGHT = 5
+    }
+  TEXT = ' V^T+ V^r^e^s^t' 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = -0.0457450351498
+    Y = -62.1038236775
+    }
+  LINEPATTERN = DASHED
+  LINETHICKNESS = 0.4
+  RAWDATA
+1
+2
+0 0 
+71.1229858398 0 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 3.13602744201
+    Y = -51.6321209657
+    }
+  LINETHICKNESS = 0.4
+  RAWDATA
+1
+2
+0 0 
+2.72446918488 0 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 27.4445578208
+    Y = 41.1508625311
+    }
+  LINEPATTERN = DASHED
+  LINETHICKNESS = 0.4
+  RAWDATA
+1
+2
+0 0 
+0 -111.511207581 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 27.4445578208
+    Y = -61.6924561632
+    }
+  ISFILLED = YES
+  GEOMTYPE = CIRCLE
+  LINETHICKNESS = 0.4
+  RAWDATA
+1.06802845001 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

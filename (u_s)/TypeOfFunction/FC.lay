@@ -1,0 +1,2100 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"gE_gI_ex(t).dat" "gE_gI(t)_slope.dat" "gE_gI(t)_avV.dat" "gE_gI(t)_minV.dat" "gE_gI(t)_maxV.dat" "v(t).dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 9.1998
+    }
+  WIDTH = 8.0177
+  HEIGHT = 2.368
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2,9-10]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'Map 5' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'Map 6' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'Map 9' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = 'Map 10' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.83
+    RANGEMIN = 0
+    RANGEMAX = 200.02
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't, ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 11.53
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'g_E, g_I,  mS/cm^2' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 11.53
+      Y1 = 13.832
+      X2 = 93.673
+      Y2 = 94.211
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 36.3417447758
+    Y = 94.0268098249
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'maximum potential' 
+### Frame Number 2 ###
+$!CREATENEWFRAME 
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 6.8275
+    }
+  WIDTH = 8.0177
+  HEIGHT = 2.368
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2,7-8]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'Map 5' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'Map 6' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'Map 9' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = 'Map 10' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.83
+    RANGEMIN = 0
+    RANGEMAX = 200.02
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't, ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 11.53
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'g_E, g_I,  mS/cm^2' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 11.53
+      Y1 = 13.832
+      X2 = 93.673
+      Y2 = 94.211
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 35.0917985981
+    Y = 91.9947608421
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'minimum potential' 
+### Frame Number 3 ###
+$!CREATENEWFRAME 
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 4.4552
+    }
+  WIDTH = 8.0177
+  HEIGHT = 2.368
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-2,5-6]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'Map 5' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'Map 6' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'Map 9' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = 'Map 10' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.83
+    RANGEMIN = 0
+    RANGEMAX = 200.02
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't, ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 11.53
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'g_E, g_I,  mS/cm^2' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 11.53
+      Y1 = 13.832
+      X2 = 93.673
+      Y2 = 94.211
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 36.3417447758
+    Y = 89.4527990686
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'average potential' 
+### Frame Number 4 ###
+$!CREATENEWFRAME 
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.083
+    }
+  WIDTH = 8.0177
+  HEIGHT = 2.368
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-4]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'Map 5' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'Map 6' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'Map 9' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = 'Map 10' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [11]
+  NAME = 'Map 11' 
+  ASSIGN
+    {
+    ZONE = 6
+    XAXISVAR = 1
+    YAXISVAR = 3
+    YAXIS = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.83
+    RANGEMIN = 0
+    RANGEMAX = 200.02
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't, ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 11.53
+    RANGEMIN = 0
+    RANGEMAX = 1
+    GRSPACING = 0.2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'g_E, g_I,  mS/cm^2' 
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 2
+    {
+    RANGEMIN = 1.37199997902
+    RANGEMAX = 78.0299987793
+    GRSPACING = 10
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 11.53
+      Y1 = 13.832
+      X2 = 93.673
+      Y2 = 94.211
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 34.9132348584
+    Y = 89.4527990686
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'potential slope' 
+### Frame Number 5 ###
+$!CREATENEWFRAME 
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 0.12515
+    }
+  WIDTH = 8.0177
+  HEIGHT = 1.9536
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [11]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+$!XYMAP  [1]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [2]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [3]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [4]
+  NAME = '&DV&' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = CIRCLE
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    SIZE = 2
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [5]
+  NAME = 'Map 5' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [6]
+  NAME = 'Map 6' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = PURPLE
+    }
+  SYMBOLS
+    {
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [7]
+  NAME = 'Map 7' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = RED
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [8]
+  NAME = 'Map 8' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = GREEN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DEL
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [9]
+  NAME = 'Map 9' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = BLUE
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [10]
+  NAME = 'Map 10' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    SHOW = NO
+    COLOR = CYAN
+    }
+  SYMBOLS
+    {
+    SYMBOLSHAPE
+      {
+      GEOMSHAPE = DIAMOND
+      }
+    COLOR = BLACK
+    ISFILLED = YES
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [11]
+  NAME = 'Map 11' 
+  ASSIGN
+    {
+    ZONE = 6
+    XAXISVAR = 1
+    YAXISVAR = 3
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    SHOW = NO
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.83
+    RANGEMIN = 0.0750000029802
+    RANGEMAX = 199.969984448
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 8
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 't, ms' 
+      TEXTSHAPE
+        {
+        HEIGHT = 8
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AXISPOSITION = 11.53
+    RANGEMIN = 1.37199997902
+    RANGEMAX = 78.0376645792
+    GRSPACING = 20
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 8
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'V-V^r^e^s^t,  mV' 
+      TEXTSHAPE
+        {
+        HEIGHT = 8
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 11.53
+      Y1 = 13.832
+      X2 = 93.673
+      Y2 = 94.211
+      }
+    }
+  DEPXTOYRATIO = 1
+$!XYLAYERS 
+  SHOWSYMBOLS = YES
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

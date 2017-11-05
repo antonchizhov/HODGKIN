@@ -1,0 +1,144 @@
+{ Uses files:
+}
+
+procedure CommonParametersFromFile;
+begin
+NSmpls:=13;
+Smpl:=1;
+{ Ohm's law }
+NP0.HH_type:='Shu';
+HodgkinPhysParameters(NP0);
+NP0.Na_type:='Mainen';
+dt:=0.00002{s};
+t_end:=0.2 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+Iind:=200{65} {pA};
+t_Iind:=0.5{s};
+{ Clamping }
+NP0.If_I_V_or_g:=2;
+{ Neuron properties }
+NP0.Square:=3e-5{cm^2};
+NP0.C_membr:=0.00075 {mF/cm^2};
+NP0.gL:=0.033 {mS/cm^2};
+NP0.VL:=-0.070 {mV};
+NP0.gNa:=80{sqrt(800*80)}{mS/cm^2};
+NP0.gK :=32{sqrt(150*32)}{mS/cm^2};
+NP0.gNaR:=0;
+NP0.IfSet_VL_or_Vrest:=1;
+NP0.NaThreshShift:=0;
+NP0.VNa:=0.050 {mV};
+NP0.Temperature:=37+273; {K}
+Form20.ComboBox1.ItemIndex:=2; {homogeneous}
+Form20.DDSpinEdit4.Value:=1; {diam, mum}
+Form20.DDSpinEdit5.Value:=50{2000};  {L, mum}
+Form20.DDSpinEdit17.Value:=150; {RL, Ohm*cm}
+Form20.DDSpinEdit3.Value:=(800/80); {w for Na}
+Form20.DDSpinEdit7.Value:=(150/32); {w for K}
+Form20.CheckBox2.Checked:=true; // Homogeneous gNa, gK in axon
+Form20.DDSpinEdit18.Value:=1; {nDraw}
+{ Steps in VC }
+Form18.DDSpinEdit8.Value:=-80; {V0}
+Form18.DDSpinEdit2.Value:=-70; {Vmin}
+Form18.DDSpinEdit3.Value:=-10; {Vmax}
+Form18.DDSpinEdit1.Value:=0; {Number of voltage steps}
+Form18.RadioGroup1.ItemIndex:=1; {Distributed model}
+Form18.DDSpinEdit9.Value:=115.6; {Depolarizing step start, ms}
+Form18.DDSpinEdit11.Value:=365.6; {First step start, ms}
+Form18.DDSpinEdit12.Value:=410.6; {End of steps, ms}
+WriteOrNot:=1;
+n_Write:=2;
+{ Samples - experimental curves }
+IfDataIn1column:=0;
+scx_Smpl:=0.001 {ms};
+scy_Smpl:=1 {mV};
+  if KeepParams=0 then begin
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  SmplFile[Smpl]:='ramp_2ms.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+  SmplFile[Smpl]:='ramp_10ms.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+  SmplFile[Smpl]:='ramp_20ms.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+  SmplFile[Smpl]:='ramp_50ms.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+  SmplFile[Smpl]:='ramp_100ms.d';
+end;
+
+procedure ParametersFromFile6;
+begin
+  SmplFile[Smpl]:='ramp_278ms.d';
+end;
+
+procedure ParametersFromFile7;
+begin
+  SmplFile[Smpl]:='ramp_20ms_steep.d';
+end;
+
+procedure ParametersFromFile8;
+begin
+  SmplFile[Smpl]:='ramp_20ms_gentle.d';
+end;
+
+procedure ParametersFromFile9;
+begin
+  SmplFile[Smpl]:='step_20ms_-50mV.d';
+end;
+
+procedure ParametersFromFile10;
+begin
+  SmplFile[Smpl]:='step_20ms_-48mV.d';
+end;
+
+procedure ParametersFromFile11;
+begin
+  SmplFile[Smpl]:='step_20ms_-45mV.d';
+end;
+
+procedure ParametersFromFile12;
+begin
+  SmplFile[Smpl]:='step_20ms_-43mV.d';
+end;
+
+procedure ParametersFromFile13;
+begin
+  SmplFile[Smpl]:='step_20ms_-40mV.d';
+end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+
+
+

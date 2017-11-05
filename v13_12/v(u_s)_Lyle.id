@@ -1,0 +1,98 @@
+{ Uses files:
+}
+
+procedure CommonParametersFromFile;
+begin
+{ Ohm's law }
+NP0.HH_type:='Lyle';
+HodgkinPhysParameters(NP0);
+t_end:=0.600 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+t_Iind:=1.000 {s};  t_IindShift:=0.0000 {s};
+Iind:=0*500 {pA};
+Freq_Iind:=0;
+uu:=0.004 {mV};
+ss:=0.1;
+NoiseToSignal:=0;//.2;
+tau_E:=0;
+tau_I:=0;
+{ Blockade }
+NP0.IfBlockNa:=0;   NP0.IfBlockPass:=0;
+NP0.IfBlockK :=0;   NP0.IfBlockKM  :=0;
+NP0.IfBlockNaR:=0;
+{ Clamping }
+NP0.If_I_V_or_g:=2;
+{ FC }
+FC_dFdu:=16667{Hz/mA/cm^2};
+FC_I0:=0.0008 {mA/cm^2};
+FC_freq:=100 {Hz};
+tau_E:=0.300 {s};
+tau_I:=0.180 {s};
+//File_u_s:='v(u_s)_Lyle_ss-03.dat';
+  if KeepParams=0 then begin
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  scy_Smpl:=1;
+  SmplFile[Smpl]:='NoFile';//'Lyle~sApproximations\SingleAP\AP_Lyle.dat';
+end;
+
+procedure ParametersFromFile2;
+begin end;
+
+procedure ParametersFromFile3;
+begin end;
+
+procedure ParametersFromFile4;
+begin end;
+
+procedure ParametersFromFile5;
+begin end;
+
+procedure ParametersFromFile6;
+begin end;
+
+procedure ParametersFromFile7;
+begin end;
+
+procedure ParametersFromFile8;
+begin end;
+
+procedure ParametersFromFile9;
+begin end;
+
+procedure ParametersFromFile10;
+begin end;
+
+procedure ParametersFromFile11;
+begin end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+
+

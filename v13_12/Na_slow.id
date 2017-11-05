@@ -1,0 +1,97 @@
+{ Uses files:
+                 'a-50.d'
+                 'a-20.d'
+                 'a0.d'
+                 'a20.d'
+                 'a40.d'
+}
+
+procedure CommonParametersFromFile;
+begin
+IfDataIn1column:=1;
+NSmpls:=5;
+{ Ohm's law }
+HH_type:='Calmar'{'Destexhe'};
+HodgkinPhysParameters;
+t_end:=0.015 {s};
+nt_end:=imin(trunc(t_end/dt), mMaxExp);
+{ Input }
+t_Iind:=0.050 {s};  t_IindShift:=0.00005 {s};
+Iind:=0 {pA};
+{ Blockade }
+IfBlockNa:=1;   IfBlockPass:=1;
+IfBlockK :=1;   IfBlockKM  :=1;
+IfBlockNaR:=0;
+{ Clamping }
+If_I_V_or_g:=1;
+Vrest[1]:=-0.100 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1 {pA};
+  if KeepParams=0 then begin
+{     Square[1]:=2.72e-5;}
+     gNaR:=13.5;
+     a1NaR:= 0.037;  a2NaR:=45.5; a3NaR:= 11;
+     b1NaR:= 2.18;   b2NaR:= 0;   b3NaR:= 19.2;
+     c1NaR:= 0.031;  c2NaR:= 0;   c3NaR:= 121;
+     d1NaR:= 0.98;   d2NaR:=63.3; d3NaR:= 11.8;   d4NaR:= -1;
+     VNaR:=0.031 {V};
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+Vh:=-0.050;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-50.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+Vh:=-0.020;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a-20.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+Vh:=0;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a0.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+Vh:=0.020;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a20.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+{INa-TTX-PeRsistant: pA, step 50 mks} {IFP, data file: VVA10}
+Vh:=0.040;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='a40.d';
+end;
+
+procedure ParametersFromFile6;
+begin
+end;
+
+procedure ParametersFromFile7;
+begin
+end;
+
+procedure ParametersFromFile8;
+begin
+end;
+
+procedure ParametersFromFile9;
+begin
+end;
+

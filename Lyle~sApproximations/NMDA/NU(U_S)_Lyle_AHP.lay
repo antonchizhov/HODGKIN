@@ -1,0 +1,297 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"v(u_s)_Lyle_AHP.dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3" "V4" "V5" "V6" "V7" "V8" "V9" "V10" "V11" "V12" "V13"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = TWOD
+$!FRAMENAME  = 'Frame 001' 
+$!ACTIVEFIELDZONES  =  [1]
+$!GLOBALCONTOUR 
+  VAR = 3
+  LABELS
+    {
+    SHOW = YES
+    GENERATEAUTOLABELS = NO
+    AUTOLEVELSKIP = 2
+    AUTOLABELSPACING = 40
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWHEADER = NO
+    XYPOS
+      {
+      X = 90.695
+      Y = 94.414
+      }
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    }
+  COLORCUTOFF
+    {
+    RANGEMIN = 42.9202423096
+    RANGEMAX = 128.760726929
+    }
+  COLORMAPFILTER
+    {
+    CONTINUOUSCOLOR
+      {
+      CMAX = 171.680969238
+      }
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 5.64321198634
+    Y = 0.0393429006018
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 5.27342739163
+    Y = 0.11496621604
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 5.01742267221
+    Y = 0.187735821462
+    Z = 0
+    }
+$!CONTOURLABELS ADD
+  XYZPOS
+    {
+    X = 4.84675285926
+    Y = 0.250517441826
+    Z = 0
+    }
+$!CONTOURLEVELS NEW
+  RAWDATA
+13
+0
+5
+10
+15
+20
+25
+30
+35
+40
+45
+50
+55
+60
+$!GLOBALSCATTER 
+  DATALABELS
+    {
+    NODELABELVAR = 1
+    }
+$!FIELD  [1]
+  MESH
+    {
+    COLOR = RED
+    }
+  CONTOUR
+    {
+    CONTOURTYPE = BOTHLINESANDFLOOD
+    COLOR = BLACK
+    USELIGHTINGEFFECT = YES
+    }
+  VECTOR
+    {
+    COLOR = RED
+    }
+  SCATTER
+    {
+    COLOR = RED
+    }
+  SHADE
+    {
+    COLOR = WHITE
+    }
+  BOUNDARY
+    {
+    COLOR = RED
+    }
+  VOLUMEMODE
+    {
+    VOLUMEOBJECTSTOPLOT
+      {
+      SHOWISOSURFACES = NO
+      SHOWSLICES = NO
+      SHOWSTREAMTRACES = NO
+      }
+    SURFACESTOPLOT = KPLANES
+    POINTSTOPLOT = SURFACESONLY
+    }
+$!TWODAXIS 
+  XVAR = 1
+  YVAR = 2
+$!VIEW FIT
+$!TWODAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 15.428
+      Y1 = 13.674
+      X2 = 84.178
+      Y2 = 90.674
+      }
+    }
+  DEPXTOYRATIO = 1
+  AXISMODE = INDEPENDENT
+  XDETAIL
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 13.68
+    RANGEMIN = -4
+    RANGEMAX = 10
+    GRSPACING = 2
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'u, mkA/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+  YDETAIL
+    {
+    AXISPOSITION = 15.43
+    RANGEMIN = 0
+    RANGEMAX = 0.7
+    GRSPACING = 0.1
+    TICKLABEL
+      {
+      NUMFORMAT
+        {
+        FORMATTING = FIXEDFLOAT
+        PRECISION = 1
+        }
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 's, mS' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!GLOBALISOSURFACE 
+  ISOVALUE1 = 42.9202423096
+  ISOVALUE2 = 85.8404846191
+  ISOVALUE3 = 128.760726929
+$!FIELDLAYERS 
+  SHOWCONTOUR = YES
+  SHOWSHADE = YES
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 21.5979818786
+    Y = 93.9907321584
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 4
+    }
+  TEXT = '[Graham] (I_N_a_-_M_a_r_k_o_v, I_K_D_r, I_K_A, I_K_M)+ I_A_H_P' 
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 93.0088892066
+    Y = 91.2876346149
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 4
+    }
+  TEXT = 'Hz' 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

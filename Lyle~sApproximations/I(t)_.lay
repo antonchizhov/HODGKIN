@@ -1,0 +1,470 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"Im(t).dat" "INa(t).dat" "IK(t).dat" "IKA(t).dat" "IKM(t).dat" "IH(t).dat" "IAHP(t).dat" "V(t)_500pA.dat" "Im-INa(t).dat" "nK(t).dat" "nA(t).dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A3
+      {
+      WIDTH = 11.693
+      HEIGHT = 16.535
+      }
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 3.8638
+    }
+  WIDTH = 7.4902
+  HEIGHT = 5.6874
+$!FRAMEMODE  = XY
+$!FRAMENAME  = 'Frame 001' 
+$!DELETEXYMAPS 
+$!ACTIVEXYMAPS  =  [1-5,9]
+$!GLOBALXY 
+  DATALABELS
+    {
+    DISTANCESKIP = 5
+    }
+  LEGEND
+    {
+    SHOW = YES
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    XYPOS
+      {
+      X = 58.818
+      Y = 99.033
+      }
+    }
+$!XYMAP  [1]
+  NAME = 'V' 
+  ASSIGN
+    {
+    ZONE = 8
+    XAXISVAR = 1
+    YAXISVAR = 2
+    YAXIS = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 1.2
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [2]
+  NAME = 'I_m' 
+  ASSIGN
+    {
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [3]
+  NAME = 'I_N_a' 
+  ASSIGN
+    {
+    ZONE = 2
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINEPATTERN = LONGDASH
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  BARCHARTS
+    {
+    COLOR = GREEN
+    FILLCOLOR = GREEN
+    }
+  ERRORBARS
+    {
+    COLOR = GREEN
+    }
+$!XYMAP  [4]
+  NAME = 'I_K' 
+  ASSIGN
+    {
+    ZONE = 3
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLUE
+    LINEPATTERN = DASHDOT
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYMAP  [5]
+  NAME = 'I_K_A' 
+  ASSIGN
+    {
+    ZONE = 4
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = GREEN
+    LINEPATTERN = DASHED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  BARCHARTS
+    {
+    COLOR = CYAN
+    FILLCOLOR = CYAN
+    }
+  ERRORBARS
+    {
+    COLOR = CYAN
+    }
+$!XYMAP  [6]
+  NAME = 'I_K_M' 
+  ASSIGN
+    {
+    ZONE = 5
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = YELLOW
+    LINEPATTERN = DOTTED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  BARCHARTS
+    {
+    COLOR = YELLOW
+    FILLCOLOR = YELLOW
+    }
+  ERRORBARS
+    {
+    COLOR = YELLOW
+    }
+$!XYMAP  [7]
+  NAME = 'I_H' 
+  ASSIGN
+    {
+    ZONE = 6
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = PURPLE
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  BARCHARTS
+    {
+    COLOR = PURPLE
+    FILLCOLOR = PURPLE
+    }
+  ERRORBARS
+    {
+    COLOR = PURPLE
+    }
+$!XYMAP  [8]
+  NAME = 'I_A_H_P' 
+  ASSIGN
+    {
+    ZONE = 7
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = RED
+    LINETHICKNESS = 0.4
+    }
+  SYMBOLS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  BARCHARTS
+    {
+    COLOR = RED
+    FILLCOLOR = RED
+    }
+  ERRORBARS
+    {
+    COLOR = RED
+    }
+$!XYMAP  [9]
+  NAME = 'I_m-I_N_a' 
+  ASSIGN
+    {
+    ZONE = 9
+    XAXISVAR = 1
+    YAXISVAR = 2
+    }
+  LINES
+    {
+    COLOR = BLACK
+    LINEPATTERN = DOTTED
+    PATTERNLENGTH = 5
+    LINETHICKNESS = 0.8
+    }
+  SYMBOLS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  BARCHARTS
+    {
+    COLOR = BLUE
+    FILLCOLOR = BLUE
+    }
+  ERRORBARS
+    {
+    COLOR = BLUE
+    }
+$!XYAXIS 
+  XDETAIL 1
+    {
+    AXISPOSITION = 13.99
+    RANGEMIN = 9
+    RANGEMAX = 20
+    GRSPACING = 5
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      OFFSET = 2
+      }
+    GRIDLINES
+      {
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'ms' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+$!XYAXIS 
+  YDETAIL 1
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.95
+    RANGEMIN = -0.08
+    RANGEMAX = 0.09
+    GRSPACING = 0.05
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = '`mA/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!XYAXIS 
+  YDETAIL 2
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 86.41
+    RANGEMIN = -175
+    RANGEMAX = 20
+    GRSPACING = 50
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    GRIDLINES
+      {
+      LINEPATTERN = DASHED
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'mV' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!XYAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 14.948
+      Y1 = 14.021
+      X2 = 86.398
+      Y2 = 91.021
+      }
+    }
+  DEPXTOYRATIO = 1
+$!ATTACHTEXT 
+  XYPOS
+    {
+    X = 40.5339078667
+    Y = 81.8754462471
+    }
+  TEXTSHAPE
+    {
+    SIZEUNITS = FRAME
+    HEIGHT = 6
+    }
+  TEXT = 'V' 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 20.0287823327
+    Y = 0.0379747736662
+    }
+  RAWDATA
+1
+2
+0 0 
+-6.30450344086 0 
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 13.7216235712
+    Y = 0.0359805457605
+    }
+  RAWDATA
+1
+2
+0 0 
+0 -0.117555387318 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

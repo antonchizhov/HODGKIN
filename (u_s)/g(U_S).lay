@@ -1,0 +1,258 @@
+#!MC 900
+$!VarSet |LFDSFN1| = '"v(u_s).dat"'
+$!VarSet |LFDSVL1| = '"V1" "V2" "V3" "V4" "V5" "V6" "V7" "V8" "V9"'
+$!SETSTYLEBASE FACTORY
+$!PAPER 
+  BACKGROUNDCOLOR = WHITE
+  ISTRANSPARENT = YES
+  ORIENTPORTRAIT = YES
+  SHOWGRID = YES
+  SHOWRULER = YES
+  SHOWPAPER = YES
+  PAPERSIZE = A4
+  PAPERSIZEINFO
+    {
+    A4
+      {
+      WIDTH = 8.2677
+      HEIGHT = 11.693
+      LEFTHARDCLIPOFFSET = 0.125
+      RIGHTHARDCLIPOFFSET = 0.125
+      TOPHARDCLIPOFFSET = 0.125
+      BOTTOMHARDCLIPOFFSET = 0.125
+      }
+    }
+  RULERSPACING = ONEINCH
+  PAPERGRIDSPACING = HALFINCH
+  REGIONINWORKAREA
+    {
+    X1 = -0.05
+    Y1 = -0.05
+    X2 = 8.318
+    Y2 = 11.74
+    }
+$!COLORMAP 
+  CONTOURCOLORMAP = SMRAINBOW
+$!COLORMAPCONTROL RESETTOFACTORY
+### Frame Number 1 ###
+$!READDATASET  '|LFDSFN1|' 
+  INCLUDETEXT = NO
+  INCLUDEGEOM = NO
+  VARLOADMODE = BYNAME
+  VARNAMELIST = '|LFDSVL1|' 
+$!REMOVEVAR |LFDSVL1|
+$!FRAMELAYOUT 
+  SHOWBORDER = NO
+  HEADERCOLOR = RED
+  XYPOS
+    {
+    X = 0.125
+    Y = 2.283
+    }
+  WIDTH = 8.0177
+  HEIGHT = 7.1269
+$!FRAMEMODE  = TWOD
+$!FRAMENAME  = 'Frame 001' 
+$!ACTIVEFIELDZONES  =  [1]
+$!GLOBALCONTOUR 
+  VAR = 7
+  LABELS
+    {
+    SHOW = YES
+    AUTOLEVELSKIP = 5
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    NUMFORMAT
+      {
+      FORMATTING = FIXEDFLOAT
+      PRECISION = 1
+      }
+    }
+  LEGEND
+    {
+    SHOW = YES
+    SHOWHEADER = NO
+    XYPOS
+      {
+      X = 90.535
+      Y = 100
+      }
+    TEXTSHAPE
+      {
+      HEIGHT = 4
+      }
+    BOX
+      {
+      BOXTYPE = NONE
+      }
+    }
+  COLORCUTOFF
+    {
+    RANGEMIN = 130.382554054
+    RANGEMAX = 437.976801872
+    }
+  COLORMAPFILTER
+    {
+    CONTINUOUSCOLOR
+      {
+      CMIN = -23.4145698547
+      CMAX = 591.773925781
+      }
+    }
+$!CONTOURLEVELS NEW
+  RAWDATA
+16
+0
+0.05
+0.1
+0.15
+0.2
+0.25
+0.3
+0.35
+0.4
+0.45
+0.5
+0.55
+0.6
+0.65
+0.7
+0.75
+$!GLOBALSCATTER 
+  DATALABELS
+    {
+    NODELABELVAR = 1
+    }
+$!FIELD  [1]
+  MESH
+    {
+    COLOR = RED
+    }
+  CONTOUR
+    {
+    CONTOURTYPE = BOTHLINESANDFLOOD
+    COLOR = BLACK
+    USELIGHTINGEFFECT = YES
+    }
+  VECTOR
+    {
+    COLOR = RED
+    }
+  SCATTER
+    {
+    COLOR = RED
+    }
+  SHADE
+    {
+    COLOR = WHITE
+    }
+  BOUNDARY
+    {
+    COLOR = RED
+    }
+  VOLUMEMODE
+    {
+    VOLUMEOBJECTSTOPLOT
+      {
+      SHOWISOSURFACES = NO
+      SHOWSLICES = NO
+      SHOWSTREAMTRACES = NO
+      }
+    SURFACESTOPLOT = KPLANES
+    POINTSTOPLOT = SURFACESONLY
+    }
+$!TWODAXIS 
+  XVAR = 1
+  YVAR = 2
+$!VIEW FIT
+$!TWODAXIS 
+  GRIDAREA
+    {
+    EXTENTS
+      {
+      X1 = 14.786
+      Y1 = 17.819
+      X2 = 83.536
+      Y2 = 94.819
+      }
+    }
+  DEPXTOYRATIO = 1
+  AXISMODE = INDEPENDENT
+  XDETAIL
+    {
+    AXISPOSITION = 17.82
+    RANGEMIN = 0
+    RANGEMAX = 100.01
+    GRSPACING = 25
+    TICKLABEL
+      {
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 'u, mkA/cm^2' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 8
+      }
+    }
+  YDETAIL
+    {
+    AUTOGRID = NO
+    AXISPOSITION = 14.79
+    RANGEMIN = 0
+    RANGEMAX = 1.50015
+    GRSPACING = 0.5
+    TICKLABEL
+      {
+      NUMFORMAT
+        {
+        FORMATTING = FIXEDFLOAT
+        PRECISION = 1
+        }
+      TEXTSHAPE
+        {
+        HEIGHT = 6
+        }
+      }
+    TITLE
+      {
+      TITLEMODE = USETEXT
+      TEXT = 's, mS' 
+      TEXTSHAPE
+        {
+        FONT = HELV
+        HEIGHT = 6
+        }
+      OFFSET = 10
+      }
+    }
+$!GLOBALISOSURFACE 
+  ISOVALUE1 = 130.382554054
+  ISOVALUE2 = 284.179677963
+  ISOVALUE3 = 437.976801872
+$!FIELDLAYERS 
+  SHOWCONTOUR = YES
+$!ATTACHGEOM 
+  XYZPOS
+    {
+    X = 14.99237789
+    Y = 0.00425293144036
+    }
+  LINETHICKNESS = 0.8
+  RAWDATA
+1
+2
+0 0 
+68.315574646 1.50405561924 
+$!REMOVEVAR |LFDSFN1|
+$!SETSTYLEBASE CONFIG

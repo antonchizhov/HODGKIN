@@ -1,0 +1,122 @@
+{ Uses files:
+  derived from 'Vn5':
+                 'a-40.d'
+                   ...
+}
+
+procedure CommonParametersFromFile;
+begin
+IfDataIn1column:=1;
+NSmpls:=1;
+{ Ohm's law }
+HH_type:='Cummins'{'Calmar'}{'Destexhe'};
+HH_order:='1-point';
+NaR_type:='Krylov';
+IfSet_gL_or_tau:=1;  IfSet_VL_or_Vrest:=1;
+HodgkinPhysParameters;
+t_end:=0.300 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+t_Iind:=5.000 {s};  t_IindShift:=0.0005 {s};  {!}
+Iind:=50 {pA};
+{ Blockade }
+IfBlockNa:=0;   IfBlockPass:=0;
+IfBlockK :=0;   IfBlockKM  :=0;
+IfBlockNaR:=0;
+gKM:=0;
+{ Clamping }
+If_I_V_or_g:=2;
+VL[1]:=-0.050 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1 {pA};
+shift_Smp:=0.15 {ms};
+  if KeepParams=0 then begin
+     t_IindShift:=0.00005;
+     a1NaR:= 0.043;  a2NaR:=30;   a3NaR:= 3.85;
+     b1NaR:= 0.52;   b2NaR:= 0;   b3NaR:= 65;
+     c1NaR:= 0.042;  c2NaR:= 0;   c3NaR:= 8.6;
+     d1NaR:= 0.50;   d2NaR:=65;   d3NaR:=12;   d4NaR:= -1;
+     VNaR:=0.031;
+     {conductances}
+     Square[1]:=32.5e-6 {cm^2};
+     gNaR:=0{5.51 - Krylov};
+     gNa[1]:=63{63 - Cummins};
+     gK:=0.17{0.17 - Cummins};
+     gKA:=1.08{1.08 - Cummins};
+     gKD:=0.31{0.31 - Cummins};
+     gL[1]:=0.0476{0.0476mS/cm^2, i.e. =0.001mF/cm^2 / 0.021s};
+
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  SmplFile[Smpl]:='NoFile';
+end;
+
+procedure ParametersFromFile2;
+begin
+end;
+
+procedure ParametersFromFile3;
+begin
+end;
+
+procedure ParametersFromFile4;
+begin
+end;
+
+procedure ParametersFromFile5;
+begin
+end;
+
+procedure ParametersFromFile6;
+begin
+end;
+
+procedure ParametersFromFile7;
+begin
+end;
+
+procedure ParametersFromFile8;
+begin
+end;
+
+procedure ParametersFromFile9;
+begin
+end;
+
+procedure ParametersFromFile10;
+begin
+end;
+
+procedure ParametersFromFile11;
+begin
+end;
+
+procedure ParametersFromFile12;
+begin
+end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+

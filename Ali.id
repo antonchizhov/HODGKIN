@@ -1,0 +1,122 @@
+{ Uses files:
+                Ali_p_04.d
+                Ali_p_10.d
+                Ali_pi02.d
+                Ali_pi04.d
+}
+
+procedure CommonParametersFromFile;
+begin
+IfDataIn1column:=0;
+NSmpls:=5;
+{ Ohm's law }
+HH_type:={'Calmar'}{'Destexhe'}'Migliore';
+HH_order:='2-points';
+HodgkinPhysParameters;
+t_end:={0.160}0.7 {s};
+dt:=0.0001 {s};
+nt_end:=imin(trunc(t_end/dt), mMaxExp);
+{ Input }
+t_Iind:={0.133}0.55 {s};  t_IindShift:=0 {s};
+{ Blockade }
+IfBlockNa:=0;   IfBlockPass:=0;
+IfBlockK :=0;   IfBlockKM  :=0;
+IfBlockNaR:=0;
+{ Clamping }
+If_I_V_or_g:=2;
+Vrest[1]:=-0.065 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=0.001 {V};
+shift_Smp:=44 {ms};
+{ Na-current }
+gNaR:=0;
+  if KeepParams=0 then begin
+     Square[1]:=8e-4 {cm^2};
+     tau_m[1]:=0.021 {ms};
+     if          HH_type='Destexhe' then begin
+        gNa[1]:={7}3;
+        gK:={18}5.5;
+        gKM:=0;
+     end else if HH_type='Migliore' then begin
+        Square[1]:=5e-4 {cm^2};
+        gNa[1]:=10;
+        gK:=10;
+        gAHP:=0.2;
+        n_AP:=0.05;
+     end;
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  Iind:=-400 {pA};
+  SmplFile[Smpl]:='Ali_p_04.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+  Iind:=-1000 {pA};
+  SmplFile[Smpl]:='Ali_p_10.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+  Iind:= 200 {pA};
+  SmplFile[Smpl]:='Ali_pi02.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+  Iind:= 400 {pA};
+  SmplFile[Smpl]:='Ali_pi04.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+  Iind:= 800 {pA};
+  SmplFile[Smpl]:='NoFile';
+end;
+
+procedure ParametersFromFile6;
+begin end;
+
+procedure ParametersFromFile7;
+begin end;
+
+procedure ParametersFromFile8;
+begin end;
+
+procedure ParametersFromFile9;
+begin end;
+
+procedure ParametersFromFile10;
+begin end;
+
+procedure ParametersFromFile11;
+begin end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+

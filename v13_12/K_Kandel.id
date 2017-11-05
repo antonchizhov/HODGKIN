@@ -1,0 +1,185 @@
+{ Uses files:
+                 'gK-40.d'
+                 'gK-20.d'
+                 'gK-0.d'
+                 'gK+20.d'
+}
+
+procedure CommonParametersFromFile;
+begin
+with NP do begin
+MainDir:='E:\Anton\HODGKIN\Data\Kandel\';
+ChDir(MainDir);
+NSmpls:=8;//5;
+{ Ohm's law }
+HH_type:='Calmar'{'Destexhe'};
+HodgkinPhysParameters(NP);
+t_end:=0.010 {s};
+t_Iind:=0.00468;{s}
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+Iind:=0 {pA};
+{ Blockade }
+IfBlockNaR:=1;
+IfBlockNa:=1;   IfBlockPass:=1;
+IfBlockK :=0;   IfBlockKM  :=1;  IfBlockKA:=1;  IfBlockPass:=1;
+{ Clamping }
+If_I_V_or_g:=3;
+Vrest:=-0.060 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1 {Units};
+  if KeepParams=0 then begin
+     {Square:=1e-4;}
+     gNaR:=44;
+     a1NaR:= 0.0191;  a2NaR:=3.0;  a3NaR:= 6.5;  a4NaR:= 1;
+     b1NaR:= 12;      b2NaR:= 0;   b3NaR:=5.8;   b4NaR:= 0;
+     c1NaR:= 0.24;    c2NaR:= 0;   c3NaR:=0.27;  c4NaR:= 0;
+     d1NaR:= 1.85;    d2NaR:= 20;  d3NaR:=9;   d4NaR:= -1;
+     VNaR:= 0.041;
+{    gNaR:=31;
+     a1NaR:= 0.0165;  a2NaR:=0.002;  a3NaR:= 6;  a4NaR:= 1;
+     b1NaR:= 5.6;    b2NaR:= 0;   b3NaR:=10.5;   b4NaR:= 0;
+     c1NaR:= 0.14;   c2NaR:= 0;   c3NaR:=1.8;  c4NaR:= 0;
+     d1NaR:= 1.75;    d2NaR:= 29;  d3NaR:=10.2;   d4NaR:= -1;
+     VNaR:= 0.055;}
+{     gK:=0.8;
+     a1K:=0.028;   a2K:=19;      a3K:=14.7;
+     b1K:=0.58;    b2K:=0;       b3K:=12.5;}
+     gK:=0.8;
+     a1K:=0.036;   a2K:=26;      a3K:=11.1;
+     b1K:=0.55;    b2K:=0;       b3K:=6.3;
+     VK := -0.077;
+     Tr_NaR:=-60;
+     KeepParams:=1;
+  end;
+  Vrev_for_g:=VK;
+end;
+end;
+
+procedure ParametersFromFile;
+begin
+{nondim gNa, ms}  {Kandel, p.156}
+{ Clamping }
+Vh:=-0.040;
+//t_end:=0.010 {s};
+//t_Iind:=0.00468;{s}
+scx_Smpl:=0.001 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1/5;
+  SmplFile[Smpl]:='gK-40_step4_68ms.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+{nondim gNa, ms}  {Kandel, p.156}
+{ Clamping }
+Vh:=-0.020;
+//t_end:=0.010 {s};
+//t_Iind:=0.00468;{s}
+scx_Smpl:=0.001 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1;
+  SmplFile[Smpl]:='gK-20_step4_68ms.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+{nondim gNa, ms}  {Kandel, p.156}
+{ Clamping }
+Vh:=0.000;
+//t_end:=0.010 {s};
+//t_Iind:=0.00468;{s}
+scx_Smpl:=0.001 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1;
+  SmplFile[Smpl]:='gK+0_step4_68ms.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+{nondim gNa, ms}  {Kandel, p.156}
+{ Clamping }
+Vh:=0.020;
+//t_end:=0.010 {s};
+//t_Iind:=0.00468;{s}
+scx_Smpl:=0.001 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1;
+  SmplFile[Smpl]:='gK+20_step4_68ms.d';
+end;
+
+
+procedure ParametersFromFile5;
+begin
+Vh:=-0.060;
+//t_end:=0.010 {s};
+scx_Smpl:=0.001 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1/100;
+  SmplFile[Smpl]:='zero.d';
+end;
+
+procedure ParametersFromFile6;
+begin
+Vh:=0.000;
+t_end:=0.010 {s};
+t_Iind:=0.00078*1.8;{s}
+scx_Smpl:=0.001*1.8 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1;
+  SmplFile[Smpl]:='gK+0_step0_78ms.d';
+end;
+
+procedure ParametersFromFile7;
+begin
+Vh:=0.000;
+t_end:=0.010 {s};
+t_Iind:=0.00212*1.8;{s}
+scx_Smpl:=0.001*1.8 {s}; scy_Smpl:=-1 {Units};
+sc_Simplex:=1;
+  SmplFile[Smpl]:='gK+0_step2_12ms.d';
+end;
+
+procedure ParametersFromFile8;
+begin
+with NP do begin
+  If_I_V_or_g:=2;
+  t_end:=0.050 {s};
+  t_Iind:=0.1;{s}
+  gNaR:=130;
+  gK:=10;
+  nt_end:=imin(trunc(t_end/dt), MaxNT);
+  IfBlockNaR:=0;  IfBlockK:=0;  IfBlockPass:=0;
+  SmplFile[Smpl]:='NoFile';
+end;
+end;
+
+procedure ParametersFromFile9;
+begin
+end;
+
+procedure ParametersFromFile10;
+begin
+end;
+
+procedure ParametersFromFile11;
+begin end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+

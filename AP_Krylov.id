@@ -1,0 +1,98 @@
+{ Uses files:
+}
+
+procedure CommonParametersFromFile;
+begin
+IfDataIn1column:=1;
+NSmpls:=5;
+{ Ohm's law }
+HH_type:={'Calmar'}{'Destexhe'}{'Migliore'}'Cummins';
+HodgkinPhysParameters;
+t_end:=0.100 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+t_Iind:=0.500 {s};  t_IindShift:=0.00005 {s};
+Iind:=70 {pA};
+{ Blockade }
+IfBlockNa:=0;   IfBlockPass:=0;
+IfBlockK :=0;   IfBlockKM  :=0;
+IfBlockNaR:=0;
+{ Clamping }
+If_I_V_or_g:=2;
+Vrest[1]:=-0.064 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1 {pA};
+{ Na-current }
+gNaR:=0.05;
+gNa[1]:=63;
+gK:=0.17;
+gKA:=1.08;
+gKD:=0.31;
+gCaT:=0.0108;
+gCaH:=0.0031;
+Square[1]:=3.25e-5 {cm^2};
+  if KeepParams=0 then begin
+     KeepParams:=1;
+  end;
+end;
+
+procedure ParametersFromFile;
+begin
+  SmplFile[Smpl]:='NoFile';
+end;
+
+procedure ParametersFromFile2;
+begin end;
+
+procedure ParametersFromFile3;
+begin end;
+
+procedure ParametersFromFile4;
+begin end;
+
+procedure ParametersFromFile5;
+begin end;
+
+procedure ParametersFromFile6;
+begin end;
+
+procedure ParametersFromFile7;
+begin end;
+
+procedure ParametersFromFile8;
+begin end;
+
+procedure ParametersFromFile9;
+begin end;
+
+procedure ParametersFromFile10;
+begin end;
+
+procedure ParametersFromFile11;
+begin end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+
+

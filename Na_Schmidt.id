@@ -1,0 +1,133 @@
+{ Uses files:
+                 'Na-30.d'
+                 'Na+0.d'
+                 'Na+30.d'
+                 'Na+60.d'
+}
+
+procedure CommonParametersFromFile;
+begin
+with NP do begin
+NSmpls:=5;
+{ Ohm's law }
+HH_type:='Calmar'{'Destexhe'};
+HodgkinPhysParameters(NP);
+t_end:=0.010 {s};
+nt_end:=imin(trunc(t_end/dt), MaxNT);
+{ Input }
+Iind:=0 {pA};
+{ Blockade }
+IfBlockNaR:=0;
+IfBlockNa:=1;   IfBlockPass:=1;
+IfBlockK :=1;   IfBlockKM  :=1;   IfBlockKA:=1;
+{ Clamping }
+If_I_V_or_g:=1;
+Vrest:=-0.060 {mV};
+{ Samples - experimental curves }
+scx_Smpl:=0.001 {s};  scy_Smpl:=-1000 {form nA to pA};
+  if KeepParams=0 then begin
+     NP.Square:=1e-5;
+     gNaR:=70;
+     a1NaR:= 0.26; a2NaR:= 0.025;  a3NaR:=1.0;  a4NaR:= 1;
+     b1NaR:= 4;    b2NaR:= 0;   b3NaR:=18;   b4NaR:= 0;
+     c1NaR:=0.061; c2NaR:= 0;   c3NaR:=38;   c4NaR:= 0;
+     d1NaR:= 1;    d2NaR:= 30;  d3NaR:=10;   d4NaR:= -1;
+{     a1NaR:= 0.162;  a2NaR:=0.37; a3NaR:= 0.77;
+     b1NaR:= 0.13;   b2NaR:= 0;   b3NaR:= 61;
+     c1NaR:= 0.013;  c2NaR:= 0;   c3NaR:= 13;
+     d1NaR:= 0.95;   d2NaR:=0.27; d3NaR:= 37;   d4NaR:= -1;}
+     VNaR := 0.038;
+     Tr_NaR:=-60;
+     { K }
+     gK:=6.9;
+     a1K:= 0.0088; a2K:= 8.1; a3K:= 1.5;
+     b1K:=0.125;   b2K:=0;    b3K:=80;
+     VK := -0.077;
+     KeepParams:=1;
+  end;
+end;
+end;
+
+procedure ParametersFromFile;
+begin
+{nA, ms}  {Schmidt}
+Vh:=NP.Vrest+0.030;
+sc_Simplex:=2;
+  SmplFile[Smpl]:='Na-30.d';
+end;
+
+procedure ParametersFromFile2;
+begin
+{nA, ms}  {Schmidt}
+Vh:=NP.Vrest+0.060;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='Na+0.d';
+end;
+
+procedure ParametersFromFile3;
+begin
+{nA, ms}  {Schmidt}
+Vh:=NP.Vrest+0.090;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='Na+30.d';
+end;
+
+procedure ParametersFromFile4;
+begin
+{nA, ms}  {Schmidt}
+Vh:=NP.Vrest+0.120;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='Na+60.d';
+end;
+
+procedure ParametersFromFile5;
+begin
+{nA, ms}  {Schmidt}
+Vh:=NP.Vrest;
+sc_Simplex:=1;
+  SmplFile[Smpl]:='zero.d';
+end;
+
+procedure ParametersFromFile6;
+begin end;
+
+procedure ParametersFromFile7;
+begin end;
+
+procedure ParametersFromFile8;
+begin end;
+
+procedure ParametersFromFile9;
+begin end;
+
+procedure ParametersFromFile10;
+begin end;
+
+procedure ParametersFromFile11;
+begin end;
+
+procedure ParametersFromFile12;
+begin end;
+
+procedure ParametersFromFile13;
+begin end;
+
+procedure ParametersFromFile14;
+begin end;
+
+procedure ParametersFromFile15;
+begin end;
+
+procedure ParametersFromFile16;
+begin end;
+
+procedure ParametersFromFile17;
+begin end;
+
+procedure ParametersFromFile18;
+begin end;
+
+procedure ParametersFromFile19;
+begin end;
+
+
