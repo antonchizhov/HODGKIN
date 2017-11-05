@@ -60,6 +60,15 @@
 # Delphi history and backups
 __history/
 __recovery/
+Data/
+Fff/
+for TomiTaira/
+Gamma_oscillations/
+Help/
+Japon_Neuron/
+Lyle_rate/
+Lyle~sApproximations/
+v13_12/
 *.~*
 
 # Castalia statistics file (since XE7 Castalia is distributed with Delphi)
